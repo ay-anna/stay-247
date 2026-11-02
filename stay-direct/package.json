@@ -1,0 +1,18 @@
+{
+  "name": "stay-direct",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A direct-booking website for holiday rentals, powered by the Guesty Booking Engine API.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "dev": "tsx scripts/dev.ts",
+    "test": "tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "check:guesty": "tsx scripts/check-guesty.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

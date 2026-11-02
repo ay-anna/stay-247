@@ -1,0 +1,22 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "buildCommand": null,
+  "installCommand": null,
+  "outputDirectory": "public",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/", "destination": "/api/home" },
+    { "source": "/stays/:id", "destination": "/api/stay?id=:id" },
+    { "source": "/sitemap.xml", "destination": "/api/sitemap" }
+  ],
+  "functions": {
+    "api/*.ts": { "maxDuration": 30 }
+  },
+  "headers": [
+    {
+      "source": "/(styles.css|site.js|booking.js|favicon.svg)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=3600, stale-while-revalidate=86400" }]
+    }
+  ]
+}
